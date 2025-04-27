@@ -1,37 +1,37 @@
 public class Cube {
     private int side;
 
-    Cube() {
+    public Cube() {
         this.side = 1;
     }
 
     public Cube(int side) {
-        this.side = side;
         if (side < 1) {
             throw new IllegalArgumentException("A cube’s side length must be equal to or greater than 1!");
         }
+        this.side = side;
     }
 
     public int getSide() {
         return side;
     }
 
+    public String toString() {
+        return "Cube{side=" + side + "}";
+    }
+
     public void setSide(int side) {
-        this.side = side;
         if (side < 1) {
             throw new IllegalArgumentException("A cube’s side length must be equal to or greater than 1!");
         }
+        this.side = side;
     }
 
     public int calculateVolume() {
-        int volume = 0;
-        volume = this.side * this.side * this.side;
-        return volume;
+        return this.side * this.side * this.side;
     }
 
     public int calculateSurfaceArea() {
-        int sa = 0;
-        sa = this.side * this.side * 6;
-        return sa;
+        return this.side * this.side * 6;
     }
 }
